@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Belanosima', sans-serif;
+}
+
+.button{
+    padding: 20px;
+    margin: 0 3px;
+    border: 2px solid black;
+    border-radius: 9px;
+    cursor: pointer;
+    width: 66px;
+}
+
+.row{
+    margin: 8px 0;
+}
+
+.row input{
+    width: 225px;
+    font-size: 20px ;
+    margin: 0;
+    padding: 10px 38px;
+    border: 2px solid black;
+    border-radius: 9px;
+}
