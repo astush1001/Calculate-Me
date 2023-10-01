@@ -16,7 +16,7 @@ html, body{
 }
 
 .button:active {
-    background-color: #3369ff;
+    background-color: black;
     color: #fff;
   }
 
