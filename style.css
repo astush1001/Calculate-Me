@@ -15,6 +15,11 @@ html, body{
     width: 66px;
 }
 
+.button:active {
+    background-color: #3369ff;
+    color: #fff;
+  }
+
 .row{
     margin: 8px 0;
 }
