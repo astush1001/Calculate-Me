@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,12 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="utils.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <h1 class="text-center">Welcome to Calculate me!</h1>
     <div class="container flex flex-col mx-auto items-center">
         <div class="row">
-            <input type="text" class="input" >
+            <input type="text" class="input">
         </div>
 
         <div class="row">
@@ -55,11 +57,14 @@
             <button class="button">=</button>
 
         </div>
+
+        <div class="history">
+            <h2>Calculation History</h2>
+            <ul id="history-list"></ul>
+        </div>
     </div>
-
-
-    
 
     <script src="script.js"></script>
 </body>
+
 </html>
