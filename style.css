@@ -1,22 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
 
-html, body{
+html,
+body {
     height: 100%;
     width: 100%;
     font-family: 'Belanosima', sans-serif;
-    background-color: #F3DDF2;
+    background-color: #ffdffd;
 }
 
-.button{
+.button {
     padding: 20px;
     margin: 0 3px;
     border: 2px solid black;
     border-radius: 42px;
-    font-weight:bold;
+    font-weight: bold;
     background-color: #81eded;
     cursor: pointer;
     width: 66px;
 }
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .button {
@@ -27,31 +29,40 @@ html, body{
     }
 }
 
-.input{
+.input {
     height: 100%;
     width: 100%;
 }
-    @media (max-width: 768px){
-        .input {
-width: 80px;
-}}
+
+@media (max-width: 768px) {
+    .input {
+        width: 80px;
+    }
+}
+
 .button:active {
     background-color: black;
     color: #81eded;
-  }
+}
 
-.row{
+.button:hover {
+    /* added a button hover effect */
+    background-color: #00b8b8;
+}
+
+.row {
     margin: 8px 0;
 }
 
-.row input{
+.row input {
     width: 225px;
-    font-size: 20px ;
+    font-size: 20px;
     margin: 0;
     padding: 10px 38px;
     border: 2px solid black;
     border-radius: 9px;
 }
+
 @media (max-width: 768px) {
     .input {
         width: 160px;
@@ -59,7 +70,7 @@ width: 80px;
     }
 }
 
-.cal-outer-body{
+.cal-outer-body {
     /* center this div to the screen */
     position: absolute;
     top: 50%;
@@ -70,9 +81,15 @@ width: 80px;
     border-radius: 30px;
     /* add a shadow */
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    
+    /* add a background color */
+    background-color: #F3DDF2;
 }
 
-.cal-inner-body{
+.cal-inner-body {
     padding: 10px;
+}
+
+.seperator{
+    /* add a seperator between the input and the buttons */
+    border: 0.5px solid black;
 }
