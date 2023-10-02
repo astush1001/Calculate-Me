@@ -1,5 +1,6 @@
 let calculationString = "";
 let calculationHistory = []; // To store the calculation history
+const maxHistoryItems = 8;
 
 // Function to update the input field and store history
 function updateInputAndHistory() {
