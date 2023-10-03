@@ -2,6 +2,18 @@ let calculationString = "";
 let calculationHistory = []; // To store the calculation history
 const maxHistoryItems = 8;
 
+
+ //dark theme functionality:
+        var icon=document.getElementById("icon");
+        icon.onclick=function(){
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                icon.src="images/sun.png";
+            }
+            else {icon.src="images/moon.png";}
+        }
+
+
 // Function to update the input field and store history
 function updateInputAndHistory() {
     document.querySelector('input').value = calculationString;

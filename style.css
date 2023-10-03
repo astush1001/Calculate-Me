@@ -1,12 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
 
-html,
+
+:root{
+    --primary-color:#ffdffd;
+    --secondary-color:#212121;
+}
+.dark-theme{
+    --primary-color:#212121;
+    --secondary-color:#ffdffd;
+}
+
+
 body {
     height: 100%;
     width: 100%;
     font-family: 'Belanosima', sans-serif;
-    background-color: #ffdffd;
+    background-color:var(--primary-color);
 }
+
+#icon{
+margin-left: 30px;
+margin-top: 10px;
+width: 30px;
+height: 30px;
+cursor:pointer;
+
+}
+
 
 .button {
     padding: 20px;
