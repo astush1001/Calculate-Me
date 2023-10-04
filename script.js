@@ -42,7 +42,7 @@ let buttons = document.querySelectorAll('.button');
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
-            calcualte();
+            calculate();
         } else if (e.target.innerHTML == 'C') {
             calculationString = "";
             updateInputAndHistory();
@@ -56,12 +56,12 @@ Array.from(buttons).forEach((button) => {
     });
 });
 
-function calcualte(){
+function calculate(){
     let input = document.querySelector('.input')
             calculationString = input.value;
             try{
                 let result = eval(calculationString);
-
+console.log(calculationHistory);
                 calculationHistory.push(`${calculationString} = ${result}`);
                 calculationString = result.toString();
 
@@ -86,10 +86,24 @@ input.addEventListener('keydown', function(e) {
       e.preventDefault();
     }
     if(e.key=="Enter"){
-        calcualte();
+        calculate();
     }
-  });
+});
   
-  function isValid(key) {
+function isValid(key) {
     return !isNaN(parseFloat(key)) || ['+', '-', '*', '/', '=', 'Enter', 'Backspace','Shift','.'].includes(key);
+}
+
+/** clear Calculation History **/
+const clearBtn = document.querySelector('.clearHistory');
+clearBtn.addEventListener('click', function(e){
+    localStorage.clear();
+    calculationHistory = [];
+    clearHistory('history-list');
+})
+function clearHistory(parentId){
+    const parent = document.querySelector(`#${parentId}`);
+    while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
     }
+}

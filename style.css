@@ -26,7 +26,12 @@ height: 30px;
 cursor:pointer;
 
 }
-
+.historyHeadline{
+    text-align:center;
+}
+.clearHistory{
+    cursor: pointer;
+}
 
 .button {
     padding: 20px;
