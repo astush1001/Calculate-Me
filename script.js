@@ -42,7 +42,22 @@ let buttons = document.querySelectorAll('.button');
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
-            let input = document.querySelector('.input')
+            calcualte();
+        } else if (e.target.innerHTML == 'C') {
+            calculationString = "";
+            updateInputAndHistory();
+        } else if (e.target.innerHTML == 'Bksp') {
+            calculationString = calculationString.slice(0, calculationString.length - 1);
+            updateInputAndHistory();
+        } else {
+            calculationString += e.target.innerHTML;
+            updateInputAndHistory();
+        }
+    });
+});
+
+function calcualte(){
+    let input = document.querySelector('.input')
             calculationString = input.value;
             try{
                 let result = eval(calculationString);
@@ -59,20 +74,7 @@ Array.from(buttons).forEach((button) => {
                     input.classList.remove('shake'); // Remove shake animation class after animation
                 }, 500);
             }
-
-
-        } else if (e.target.innerHTML == 'C') {
-            calculationString = "";
-            updateInputAndHistory();
-        } else if (e.target.innerHTML == 'Bksp') {
-            calculationString = calculationString.slice(0, calculationString.length - 1);
-            updateInputAndHistory();
-        } else {
-            calculationString += e.target.innerHTML;
-            updateInputAndHistory();
-        }
-    });
-});
+}
 
 let input = document.getElementsByClassName('input')[0];
 input.addEventListener('keydown', function(e) {
@@ -83,8 +85,11 @@ input.addEventListener('keydown', function(e) {
         }, 500);
       e.preventDefault();
     }
+    if(e.key=="Enter"){
+        calcualte();
+    }
   });
   
   function isValid(key) {
-    return !isNaN(parseFloat(key)) || ['+', '-', '*', '/', '=', 'Enter', 'Backspace','.'].includes(key);
+    return !isNaN(parseFloat(key)) || ['+', '-', '*', '/', '=', 'Enter', 'Backspace','Shift','.'].includes(key);
     }
