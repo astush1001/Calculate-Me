@@ -1,70 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculate me! - A Calculator Made By Me</title>
-    <link rel="icon" type="image/x-icon" href="Logo.png">
+    <link rel="icon" type="image/x-icon" href="Logo.png" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="utils.css" rel="stylesheet" type="text/css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <h1 class="text-center">Welcome to Calculate me!</h1>
     <div class="container flex flex-col mx-auto items-center">
+      <div class="border p-2">
         <div class="row">
-            <input type="text" class="input">
-        </div>
-
-        <div class="row">
-            <button class="button">C</button>
-            <button class="button">%</button>
-            <button class="button">Bksp</button>
-            <button class="button">*</button>
-
+          <input type="text" class="input" />
         </div>
 
         <div class="row">
-            <button class="button">7</button>
-            <button class="button">8</button>
-            <button class="button">9</button>
-            <button class="button">+</button>
-
+          <button class="button text-bold">C</button>
+          <button class="button text-bold">%</button>
+          <button class="button text-bold">Bksp</button>
+          <button class="button text-bold">*</button>
         </div>
 
         <div class="row">
-            <button class="button">4</button>
-            <button class="button">5</button>
-            <button class="button">6</button>
-            <button class="button">-</button>
-
+          <button class="button text-bold">7</button>
+          <button class="button text-bold">8</button>
+          <button class="button text-bold">9</button>
+          <button class="button text-bold">+</button>
         </div>
 
         <div class="row">
-            <button class="button">1</button>
-            <button class="button">2</button>
-            <button class="button">3</button>
-            <button class="button">/</button>
-
+          <button class="button text-bold">4</button>
+          <button class="button text-bold">5</button>
+          <button class="button text-bold">6</button>
+          <button class="button text-bold">-</button>
         </div>
 
         <div class="row">
-            <button class="button">00</button>
-            <button class="button">0</button>
-            <button class="button">.</button>
-            <button class="button">=</button>
-
+          <button class="button text-bold">1</button>
+          <button class="button text-bold">2</button>
+          <button class="button text-bold">3</button>
+          <button class="button text-bold">/</button>
         </div>
 
-        <div class="history">
-            <h2>Calculation History</h2>
-            <ul id="history-list"></ul>
+        <div class="row">
+          <button class="button text-bold">00</button>
+          <button class="button text-bold">0</button>
+          <button class="button text-bold">.</button>
+          <button class="button text-bold">=</button>
         </div>
+      </div>
+
+      <div class="history">
+        <h2>Calculation History</h2>
+        <button type="reset" onClick="clearHistory()">Reset</button>
+        <ul id="history-list"></ul>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

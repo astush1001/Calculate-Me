@@ -16,13 +16,18 @@ if (savedCalculationHistory) {
 }
 function updateHistoryList() {
     const historyList = document.getElementById('history-list');
-    historyList.innerHTML = ""; // Clear the existing list
+    historyList.innerHTML = " "; // Clear the existing list
 
     calculationHistory.forEach((calculation) => {
         const listItem = document.createElement('li');
         listItem.textContent = calculation;
         historyList.appendChild(listItem);
     });
+}
+
+function clearHistory() {
+    localStorage.removeItem('calculationHistory')
+    document.getElementById('history-list').innerHTML = "";// Clear the existing history
 }
 
 let buttons = document.querySelectorAll('.button');

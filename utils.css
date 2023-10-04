@@ -18,3 +18,18 @@
 .items-center{
     align-items: center;
 }
+
+.p-2 {
+    padding: 4px;
+}
+
+.border {
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 4px;
+    border-color: black;
+}
+
+.text-bold {
+    font-weight: 900;
+}
