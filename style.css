@@ -1,34 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
 
-html, body{
+
+:root{
+    --primary-color:#ffdffd;
+    --secondary-color:#212121;
+}
+.dark-theme{
+    --primary-color:#212121;
+    --secondary-color:#ffdffd;
+}
+
+
+body {
     height: 100%;
     width: 100%;
     font-family: 'Belanosima', sans-serif;
+    background-color:var(--primary-color);
 }
 
-.button{
+#icon{
+margin-left: 30px;
+margin-top: 10px;
+width: 30px;
+height: 30px;
+cursor:pointer;
+
+}
+
+
+.button {
     padding: 20px;
     margin: 0 3px;
     border: 2px solid black;
-    border-radius: 9px;
+    border-radius: 42px;
+    font-weight: bold;
+    background-color: #81eded;
     cursor: pointer;
     width: 66px;
 }
 
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .button {
+        padding: 10px;
+        margin: 0 2px;
+        font-size: 16px;
+        width: 45px;
+    }
+}
+
+.input {
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .input {
+        width: 80px;
+    }
+}
+
 .button:active {
     background-color: black;
-    color: #fff;
-  }
+    color: #81eded;
+}
 
-.row{
+.button:hover {
+    /* added a button hover effect */
+    background-color: #00b8b8;
+}
+
+.row {
     margin: 8px 0;
 }
 
-.row input{
+.row input {
     width: 225px;
-    font-size: 20px ;
+    font-size: 20px;
     margin: 0;
     padding: 10px 38px;
     border: 2px solid black;
     border-radius: 9px;
+}
+
+@media (max-width: 768px) {
+    .input {
+        width: 160px;
+        font-size: 16px;
+    }
+}
+
+.cal-outer-body {
+    /* center this div to the screen */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* add a boundary with curved sides */
+    border: 2px solid black;
+    border-radius: 30px;
+    /* add a shadow */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    /* add a background color */
+    background-color: #F3DDF2;
+}
+
+.cal-inner-body {
+    padding: 10px;
+}
+
+.seperator{
+    /* add a seperator between the input and the buttons */
+    border: 0.5px solid black;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
 }
