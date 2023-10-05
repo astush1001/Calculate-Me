@@ -45,9 +45,12 @@ cursor:pointer;
 }
 
 .button.arithmetic {
-    background: #59d1c7;
+    background: #83b4b1;
     font-size: 17px;
+    width: auto;
 }
+
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .button {
