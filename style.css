@@ -1,17 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
 
 :root {
-  --primary-color: #ffdffd;
-  --secondary-color: #212121;
+  --primary-color: #e3f9ff;
+  --secondary-color: rgb(35, 67, 88);
 }
 .dark-theme {
   --primary-color: #212121;
-  --secondary-color: #ffdffd;
+  --secondary-color: #141013;
 }
 
 body {
   height: 100%;
-  width: 100%;
   font-family: "Belanosima", sans-serif;
   background-color: var(--primary-color);
 }
@@ -23,22 +22,28 @@ body {
   height: 30px;
   cursor: pointer;
 }
+
 .historyHeadline {
   text-align: center;
 }
+
 .clearHistory {
   cursor: pointer;
 }
 
 .button {
-  padding: 20px;
-  margin: 0 3px;
-  border: 2px solid black;
-  border-radius: 42px;
-  font-weight: bold;
-  background-color: #81eded;
+  width: 50px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 0.5rem;
+  margin: 0.3rem;
+  box-shadow: 2px 5px 20px #000;
+  background: transparent;
+  font-size: 20px;
+  color: #fff;
   cursor: pointer;
-  width: 66px;
 }
 
 .button.arithmetic {
@@ -47,12 +52,9 @@ body {
 }
 
 /* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .button {
-    padding: 10px;
-    margin: 0 2px;
-    font-size: 16px;
-    width: 45px;
+@media screen and (max-width: 768px) {
+  .cal-outer-body {
+    width: 350px;
   }
 }
 
@@ -68,7 +70,8 @@ body {
 
 .button:hover {
   /* added a button hover effect */
-  background-color: #00b8b8;
+  background-color: #000000;
+  opacity: 0.7;
 }
 
 .row {
@@ -80,42 +83,22 @@ body {
   font-size: 20px;
   margin: 0;
   padding: 10px 38px;
-  border: 2px solid black;
-  border-radius: 9px;
-}
-
-/* Responsive styles for even smaller screens */
-@media (max-width: 300px) {
-  .row input {
-    width: 170px;
-  }
-}
-@media (max-width: 270px) {
-  .row input {
-    width: 130px;
-  }
+  border: none;
+  border-radius: 5px;
 }
 
 .cal-outer-body {
-  border: 2px solid black;
-  border-radius: 30px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f3ddf2;
-  margin-left: auto;
   display: block;
-  max-width: 400px;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: 0 auto;
+  width: 400px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background: var(--secondary-color);
+  border-radius: 10px;
+  color: #fff;
 }
 
 .cal-inner-body {
   padding: 10px;
-}
-
-.seperator {
-  /* add a seperator between the input and the buttons */
-  border: 0.5px solid black;
 }
 
 .shake {
