@@ -49,7 +49,7 @@ Array.from(buttons).forEach((button) => {
         } else if (e.target.innerHTML == 'C') {
             calculationString = "";
             updateInputAndHistory();
-        } else if (e.target.innerHTML == 'Bksp') {
+        } else if (e.target.innerHTML == '←') {
             calculationString = calculationString.slice(0, calculationString.length - 1);
             updateInputAndHistory();
         } else {
