@@ -44,7 +44,6 @@ body {
 .button.arithmetic {
   background: #83b4b1;
   font-size: 17px;
-  width: auto;
 }
 
 /* Responsive styles for smaller screens */
