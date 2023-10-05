@@ -1,17 +1,19 @@
 let calculationString = "";
 let calculationHistory = []; // To store the calculation history
 const maxHistoryItems = 8;
+const input = document.querySelector('.input');
 
 
- //dark theme functionality:
-        var icon=document.getElementById("icon");
-        icon.onclick=function(){
-            document.body.classList.toggle("dark-theme");
-            if(document.body.classList.contains("dark-theme")){
-                icon.src="images/sun.png";
-            }
-            else {icon.src="images/moon.png";}
-        }
+//dark theme functionality:
+const icon = document.getElementById("icon");
+icon.onclick = function () {
+    document.body.classList.toggle("dark-theme");
+    if (document.body.classList.contains("dark-theme")) {
+        icon.src = "images/sun.png";
+    } else {
+        icon.src = "images/moon.png";
+    }
+}
 
 
 // Function to update the input field and store history
@@ -27,6 +29,7 @@ if (savedCalculationHistory) {
     calculationHistory = JSON.parse(savedCalculationHistory);
     updateHistoryList(); // Update the history list when the page loads
 }
+
 function updateHistoryList() {
     const historyList = document.getElementById('history-list');
     historyList.innerHTML = ""; // Clear the existing list
@@ -56,39 +59,38 @@ Array.from(buttons).forEach((button) => {
     });
 });
 
-function calculate(){
-    let input = document.querySelector('.input')
-            calculationString = input.value;
-            try{
-                let result = eval(calculationString);
-console.log(calculationHistory);
-                calculationHistory.push(`${calculationString} = ${result}`);
-                calculationString = result.toString();
+function calculate() {
+    calculationString = input.value;
+    try {
+        if (calculationString && calculationString.match(/[+\-*\/]/g)) {
+            let result = eval(calculationString);
+            calculationHistory.push(`${calculationString} = ${result}`);
+            calculationString = result.toString();
+            updateInputAndHistory();
+        }
 
-                updateInputAndHistory();
-            }
-            catch(e){
-                input.value="";
-                input.classList.add('shake'); // Add shake animation class
-                setTimeout(() => {
-                    input.classList.remove('shake'); // Remove shake animation class after animation
-                }, 500);
-            }
-}
-
-let input = document.getElementsByClassName('input')[0];
-input.addEventListener('keydown', function(e) {
-    if(!isValid(e.key)) {
+    } catch (e) {
+        input.value = "";
         input.classList.add('shake'); // Add shake animation class
         setTimeout(() => {
             input.classList.remove('shake'); // Remove shake animation class after animation
         }, 500);
-      e.preventDefault();
+    }
+}
+
+input.addEventListener('keydown', function (e) {
+    if (!isValid(e.key)) {
+        input.classList.add('shake'); // Add shake animation class
+        setTimeout(() => {
+            input.classList.remove('shake'); // Remove shake animation class after animation
+        }, 500);
+        e.preventDefault();
     }
     if(e.key=="Enter"){
         calculate();
     }
 });
+
   
 function isValid(key) {
     return !isNaN(parseFloat(key)) || ['+', '-', '*', '/', '=', 'Enter', 'Backspace','Shift','.'].includes(key);
@@ -106,4 +108,11 @@ function clearHistory(parentId){
     while (parent.lastChild) {
         parent.removeChild(parent.lastChild);
     }
+    if (e.key == "Enter") {
+        calculate();
+    }
+};
+
+function isValid(key) {
+    return !isNaN(parseFloat(key)) || ['+', '-', '*', '/', '=', 'Enter', 'Backspace', 'Shift', '.'].includes(key);
 }

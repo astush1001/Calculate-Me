@@ -100,18 +100,16 @@ cursor:pointer;
 }
 
 .cal-outer-body {
-    /* center this div to the screen */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* add a boundary with curved sides */
     border: 2px solid black;
     border-radius: 30px;
-    /* add a shadow */
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    /* add a background color */
     background-color: #F3DDF2;
+    margin-left: auto;
+    display: block;
+    max-width: 400px;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .cal-inner-body {
