@@ -47,6 +47,7 @@ Array.from(buttons).forEach((button) => {
   button.addEventListener("click", (e) => {
     if (e.target.innerHTML == "=") {
       calculate();
+      calculationString = "";
     } else if (e.target.innerHTML == "C") {
       calculationString = "";
       updateInputAndHistory();
