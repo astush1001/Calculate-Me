@@ -10,67 +10,49 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="utils.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-
     <img src="images/moon.png" id="icon">
-
-    <div class="cal-outer-body">
-        <div class="cal-inner-body">
-            <h1 class="text-center">Welcome to Calculate me!</h1>
-            <div class="container flex flex-col items-center">
-                <audio src="./sound-effect/click-sound.wav" id="click-sound"></audio>
-
-                <div class="row">
-                    <input type="text" class="input">
-                </div>
-
-                <div class="row">
-                    <button class="button arithmetic">C</button>
-                    <button class="button arithmetic">%</button>
-                    <button class="button arithmetic">←</button>
-                    <button class="button arithmetic">*</button>
-
-                </div>
-
-                <div class="row">
-                    <button class="button">7</button>
-                    <button class="button">8</button>
-                    <button class="button">9</button>
-                    <button class="button arithmetic">+</button>
-
-                </div>
-
-                <div class="row">
-                    <button class="button">4</button>
-                    <button class="button">5</button>
-                    <button class="button">6</button>
-                    <button class="button arithmetic">-</button>
-
-                </div>
-
-                <div class="row">
-                    <button class="button">1</button>
-                    <button class="button">2</button>
-                    <button class="button">3</button>
-                    <button class="button arithmetic">/</button>
-
-                </div>
-
-                <div class="row">
-                    <button class="button">00</button>
-                    <button class="button">0</button>
-                    <button class="button">.</button>
-                    <button class="button arithmetic">=</button>
-
-                </div>
-
-                <div class="history">
-                    <h2 class="historyHeadline">Calculation History <a class="clearHistory"
-                            title="Click to clear Calculation History">🗑</a></h2>
-                    <ul id="history-list"></ul>
-                </div>
+    <div class="mycalc">
+        <audio src="./sound-effect/click-sound.wav" id="click-sound"></audio>
+        <h1 class="text-center">Calculate me !</h1>
+        <div name="calculator" id="calculator">
+            <input type="text" class="input">
+            <div>
+                <button class="button arithmetic">C</button>
+                <button class="button arithmetic">%</button>
+                <button class="button arithmetic">←</button>
+                <button class="button arithmetic">*</button>
             </div>
+            <div>
+                <button class="button">7</button>
+                <button class="button">8</button>
+                <button class="button">9</button>
+                <button class="button arithmetic">+</button>
+            </div>
+            <div>
+                <button class="button">4</button>
+                <button class="button">5</button>
+                <button class="button">6</button>
+                <button class="button arithmetic">-</button>
+            </div>
+            <div>
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+                <button class="button arithmetic">/</button>	
+            </div>
+            <div>
+                <button class="button">00</button>
+                <button class="button">0</button>
+                <button class="button">.</button>
+                <button class="button arithmetic">=</button>
+            </div>
+        </div>
+        <div class="history">
+            <h2 class="historyHeadline">Calculation History
+                <a class="clearHistory" title="Click to clear Calculation History">🗑</a>
+            </h2>
+            <ul id="history-list"></ul>
         </div>
     </div>
     <script src="script.js"></script>
