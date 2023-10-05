@@ -45,7 +45,7 @@ let buttons = document.querySelectorAll('.button');
 Array.from(buttons).forEach((button) => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
-                calculate();
+            calculate();
         } else if (e.target.innerHTML == 'C') {
             calculationString = "";
             updateInputAndHistory();
@@ -86,10 +86,32 @@ input.addEventListener('keydown', function (e) {
         }, 500);
         e.preventDefault();
     }
-    if (e.key == "Enter") {
+    if(e.key=="Enter"){
         calculate();
     }
 });
+
+  
+function isValid(key) {
+    return !isNaN(parseFloat(key)) || ['+', '-', '*', '/', '=', 'Enter', 'Backspace','Shift','.'].includes(key);
+}
+
+/** clear Calculation History **/
+const clearBtn = document.querySelector('.clearHistory');
+clearBtn.addEventListener('click', function(e){
+    localStorage.clear();
+    calculationHistory = [];
+    clearHistory('history-list');
+})
+function clearHistory(parentId){
+    const parent = document.querySelector(`#${parentId}`);
+    while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+    }
+    if (e.key == "Enter") {
+        calculate();
+    }
+};
 
 function isValid(key) {
     return !isNaN(parseFloat(key)) || ['+', '-', '*', '/', '=', 'Enter', 'Backspace', 'Shift', '.'].includes(key);

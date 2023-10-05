@@ -26,7 +26,12 @@ height: 30px;
 cursor:pointer;
 
 }
-
+.historyHeadline{
+    text-align:center;
+}
+.clearHistory{
+    cursor: pointer;
+}
 
 .button {
     padding: 20px;
@@ -39,6 +44,10 @@ cursor:pointer;
     width: 66px;
 }
 
+.button.arithmetic {
+    background: #59d1c7;
+    font-size: 17px;
+}
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .button {
