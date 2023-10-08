@@ -3,8 +3,6 @@ let calculationHistory = []; // To store the calculation history
 const maxHistoryItems = 8;
 const input = document.querySelector(".input");
 
-//dark theme functionality:
-const icon = document.getElementById("icon");
 icon.onclick = function () {
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
@@ -13,6 +11,16 @@ icon.onclick = function () {
     icon.src = "images/moon.png";
   }
 };
+
+//Audio button functionality.
+const volumeButton = document.getElementById("volumeIcon");
+const audio = document.getElementById("click-sound");
+
+volumeButton.addEventListener("click", () => {
+  audio.muted = !audio.muted;
+  volumeButton.src = `${audio.muted ? 'images/Volume_Off.png' : 'images/Volume_On.png'}`;
+  volumeButton.alt = `${audio.muted ? 'Toggle Button Mute' : 'Toggle Button Unmute'}`;
+});
 
 // Function to update the input field and store history
 function updateInputAndHistory() {
