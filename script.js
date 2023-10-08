@@ -57,6 +57,9 @@ Array.from(buttons).forEach((button) => {
       );
       updateInputAndHistory();
     } else {
+      if (calculationString.charAt(calculationString.length - 1) == "%") {
+        calculationString = calculationString.concat("*");
+      }
       calculationString += e.target.innerHTML;
       updateInputAndHistory();
     }
@@ -66,7 +69,14 @@ Array.from(buttons).forEach((button) => {
 function calculate() {
   calculationString = input.value;
   try {
-    if (calculationString && calculationString.match(/[+\-*\/]/g)) {
+    if (calculationString && calculationString.match(/[+\-*\/%]/g)) {
+      
+      // Check if there's a number followed by % (percentage)
+      if (/\d+\s*%(?!\d)/.test(calculationString)) {
+        // Replace % with / 100 in the calculation string
+        calculationString = calculationString.replace(/%/g, '/ 100');
+      }
+
       let result = eval(calculationString);
       calculationHistory.push(`${calculationString} = ${result}`);
       calculationString = result.toString();
