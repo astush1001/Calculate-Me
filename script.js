@@ -57,6 +57,9 @@ Array.from(buttons).forEach((button) => {
       );
       updateInputAndHistory();
     } else {
+      if (calculationString.charAt(calculationString.length - 1) == "%") {
+        calculationString = calculationString.concat("*");
+      }
       calculationString += e.target.innerHTML;
       updateInputAndHistory();
     }
